@@ -4,6 +4,14 @@
   "version": "0.1.0",
   "description": "Homebridge plugin for Korean Navien boiler room controllers (NR-35D / NR-36D / NR-40D) registered in the 나비엔 스마트 app",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s8ngyu/homebridge-navien-boiler.git"
+  },
+  "homepage": "https://github.com/s8ngyu/homebridge-navien-boiler#readme",
+  "bugs": {
+    "url": "https://github.com/s8ngyu/homebridge-navien-boiler/issues"
+  },
   "type": "module",
   "main": "src/index.js",
   "files": [
@@ -17,7 +25,8 @@
     "homebridge": "^1.8.0 || ^2.0.0-beta.0"
   },
   "scripts": {
-    "test": "node --test test/"
+    "test": "node --test test/",
+    "prepublishOnly": "npm test"
   },
   "keywords": [
     "homebridge-plugin",

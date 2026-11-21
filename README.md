@@ -3,7 +3,9 @@
 Homebridge plugin that puts a Korean Navien boiler room controller into Apple Home:
 난방 (heating) as a thermostat, 온수 (hot water) as a second thermostat, and 외출 (away) as a switch.
 
-It talks to the same cloud as the **나비엔 스마트** app. This is not an official API.
+It talks to the same cloud as the **나비엔 스마트** app.
+
+> **Unofficial.** This plugin is not made or endorsed by KD Navien. It uses the undocumented API of the 나비엔 스마트 app, which Navien can change at any time, and their terms of service may not allow third-party clients. Use it at your own risk.
 
 | Room controller | modelCode | Status |
 | --- | --- | --- |
@@ -18,13 +20,13 @@ It talks to the same cloud as the **나비엔 스마트** app. This is not an of
 
 ## Install
 
-From a packed tarball (`npm pack` in this folder):
+In the Homebridge UI, open **Plugins**, search for `homebridge-navien-boiler` and click **Install**.
+
+Or from a terminal:
 
 ```shell
-sudo npm install -g homebridge-navien-boiler-0.1.0.tgz
+sudo hb-service add homebridge-navien-boiler
 ```
-
-On a `hb-service` install, use the plugin directory it reports (`hb-service status`) instead of a global install.
 
 ## Configure
 
