@@ -1,0 +1,67 @@
+{
+  "pluginAlias": "NavienBoiler",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Controls Korean Navien boiler room controllers (NR-35D / NR-36D / NR-40D) that are registered in the 나비엔 스마트 app. Navien allows one login per account: while this plugin is running, the 나비엔 스마트 app will be logged out, and opening the app logs the plugin out until its next request.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "Navien Boiler",
+        "required": true
+      },
+      "username": {
+        "title": "나비엔 스마트 ID",
+        "type": "string",
+        "required": true
+      },
+      "password": {
+        "title": "나비엔 스마트 password",
+        "type": "string",
+        "required": true,
+        "x-schema-form": {
+          "type": "password"
+        }
+      },
+      "heatingMode": {
+        "title": "Heating thermostat controls",
+        "description": "실내난방 sets the room temperature, 온돌난방 sets the floor water temperature. 'Both' adds one thermostat per mode.",
+        "type": "string",
+        "default": "auto",
+        "oneOf": [
+          { "title": "Automatic (실내난방 if the boiler has it, otherwise 온돌난방)", "enum": ["auto"] },
+          { "title": "실내난방 (room temperature)", "enum": ["inside"] },
+          { "title": "온돌난방 (floor water temperature)", "enum": ["ondol"] },
+          { "title": "Both, as two thermostats", "enum": ["both"] }
+        ]
+      },
+      "hotWater": {
+        "title": "Add a 온수 (hot water) thermostat",
+        "type": "boolean",
+        "default": true
+      },
+      "awaySwitch": {
+        "title": "Add a 외출 (away) switch",
+        "type": "boolean",
+        "default": true
+      },
+      "hotWaterOnlySwitch": {
+        "title": "Add a 온수전용 (hot water only) switch",
+        "type": "boolean",
+        "default": false
+      },
+      "homeSeq": {
+        "title": "Home number (homeSeq)",
+        "description": "Only needed when the account has several homes. The log lists them at startup.",
+        "type": "integer"
+      },
+      "debug": {
+        "title": "Log every message exchanged with the boiler",
+        "type": "boolean",
+        "default": false
+      }
+    }
+  }
+}

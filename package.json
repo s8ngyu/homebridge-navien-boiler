@@ -1,0 +1,35 @@
+{
+  "name": "homebridge-navien-boiler",
+  "displayName": "Navien Boiler",
+  "version": "0.1.0",
+  "description": "Homebridge plugin for Korean Navien boiler room controllers (NR-35D / NR-36D / NR-40D) registered in the 나비엔 스마트 app",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "config.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": "^20.9.0 || ^22.11.0 || ^24.11.0 || >=26",
+    "homebridge": "^1.8.0 || ^2.0.0-beta.0"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "navien",
+    "boiler",
+    "thermostat",
+    "나비엔"
+  ],
+  "dependencies": {
+    "mqtt": "^5.10.0"
+  },
+  "devDependencies": {
+    "homebridge": "^1.8.0"
+  }
+}
